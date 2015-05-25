@@ -1,8 +1,9 @@
  'Sun-$Revision: 30.17 $'
  '
-Copyright 1992-2011 AUTHORS.
+Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -579,8 +580,9 @@ is the representee.\x7fModuleInfo: Module: morph InitialContents: FollowSlot\x7f
         
          color: newC = ( |
             | 
-            rawColor: newC.
-            changed.
+            rawColor = newC ifFalse: [
+              rawColor: newC.
+              changed].
             self).
         } | ) 
 

@@ -426,7 +426,7 @@ boxedItems.\x7fModuleInfo: Module: pluggableOutliner InitialContents: FollowSlot
             buildItemsHolder.
 
             indentSubParts ifTrue: [
-              body addMorphLast: rigidSpacer copy color: (paint named: 'transparent')
+              body addMorphLast: rigidSpacer copy
             ].
             body addMorphLast: items.
             recolor.
@@ -1144,7 +1144,7 @@ Same for collapse:, expandAll: collapseAll: -- dmu 4/1\x7fModuleInfo: Module: pl
          newColumn = ( |
             | 
             ((columnMorph copy leftJustify
-            color: color)
+            color: paint named: 'transparent')
             borderWidth: 0)
             baseMinHeight: 0).
         } | ) 
@@ -1221,12 +1221,6 @@ Same for collapse:, expandAll: collapseAll: -- dmu 4/1\x7fModuleInfo: Module: pl
         
          recolor = ( |
             | 
-            header color: model preferredHeaderColor.
-            header morphsDo: [|:m|
-              m isButton ifTrue: [
-              m color: model preferredHeaderColor.
-              m findMorphWithLabel ifNil: false IfNotNil: [|:l|
-                 l color: model preferredTitleColor ]]].
             commentButton 
                colorButtonBackground: model preferredBodyColor
                           Foreground: model preferredTitleColor.
@@ -1235,12 +1229,39 @@ Same for collapse:, expandAll: collapseAll: -- dmu 4/1\x7fModuleInfo: Module: pl
             body ifNotNil: [body color: model preferredBodyColor].
             items ifNotNil: [items recolor].
             model recolorModuleSummary.
-            "Tags only at top level"
-            isRoot
-               ifTrue: [tag color: model preferredTagColor]
-                False: [tag color: model preferredBodyColor].
             expander color: model preferredTitleColor.
+            isRoot
+               ifTrue: [recolorAsRoot]
+                False: [recolorAsLeaf].
             self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'pluggableOutliner' -> 'parent' -> () From: ( | {
+         'Category: basics\x7fModuleInfo: Module: pluggableOutliner InitialContents: FollowSlot'
+        
+         recolorAsLeaf = ( |
+            | 
+            header color: model preferredBodyColor.
+            header morphsDo: [|:m|
+              m isButton ifTrue: [
+                m color: model preferredBodyColor.
+                m findMorphWithLabel ifNil: false IfNotNil: [|:l|
+                   l color: model preferredTitleColor ]]].
+            tag color: model preferredBodyColor. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'pluggableOutliner' -> 'parent' -> () From: ( | {
+         'Category: basics\x7fModuleInfo: Module: pluggableOutliner InitialContents: FollowSlot'
+        
+         recolorAsRoot = ( |
+            | 
+            header color: model preferredHeaderColor.
+            header morphsDo: [|:m|
+              m isButton ifTrue: [
+                m color: model preferredHeaderColor.
+                m findMorphWithLabel ifNil: false IfNotNil: [|:l|
+                   l color: model preferredTitleColor ]]].
+            tag color: model preferredTagColor. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'pluggableOutliner' -> 'parent' -> () From: ( | {

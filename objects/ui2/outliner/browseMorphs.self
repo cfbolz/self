@@ -1,8 +1,9 @@
  'Sun-$Revision: 30.12 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -104,12 +105,12 @@ SlotsToOmit: parent prototype.
             | 
             r: (rowMorph copy color: color) borderWidth: 0.
 
-            r addMorphLast:  spacerMorph copyH: 15 Color: color.
+            r addMorphLast:  spacerMorph copyH: 15.
             r addMorphLast:  (labelMorph copy  label: 'Well-known only') 
                                             fontSpec: fontSpec.
-            r addMorphLast:  spacerMorph copyH: 5 Color: color.
+            r addMorphLast:  spacerMorph copyH: 5.
             r addMorphLast:  filterButton press.
-            r addMorphLast:  spacerMorph copyH: 10 Color: color.
+            r addMorphLast:  spacerMorph copyH: 10.
             r).
         } | ) 
 
@@ -576,7 +577,8 @@ SlotsToOmit: mirror parent prototype.
          'ModuleInfo: Module: browseMorphs InitialContents: FollowSlot'
         
          buildFilteringRow = ( |
-            | spacerMorph copyH: 0 Color: color).
+            | 
+            spacerMorph copyH: 0).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'slotsInModuleMorph' -> () From: ( | {
@@ -804,7 +806,7 @@ SlotsToOmit: parent prototype.
             title addMorphLast: t.
 
             row: (rowMorph copy beShrinkWrap color: color) borderWidth: 0.
-            row addMorphLast: spacerMorph copyH: 11 Color: color.        
+            row addMorphLast: spacerMorph copyH: 11.        
             frame: frameMorph copy beShrinkWrap color: color.
             frame frameStyle: frame insetBezelStyle.
             frame borderWidth: 2.
@@ -1740,7 +1742,8 @@ SlotsToOmit: mirror parent prototype.
          'ModuleInfo: Module: browseMorphs InitialContents: FollowSlot'
         
          buildFilteringRow = ( |
-            | spacerMorph copyH: 0 Color: color).
+            | 
+            spacerMorph copyH: 0).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'findSlotEnumerationMorph' -> () From: ( | {
@@ -1754,14 +1757,14 @@ SlotsToOmit: mirror parent prototype.
             resend.buildTitle.
 
             row: (rowMorph copy beShrinkWrap color: color) borderWidth: 0.
-            row addMorphLast: spacerMorph copyH: 11 Color: color.        
+            row addMorphLast: spacerMorph copyH: 11.        
             t: labelMorph copy label: 'Starting lookup from:'.
             t fontSpec: fontSpec.
             row addMorphLast: t.
             title addMorphLast: row.
 
             row: (rowMorph copy beShrinkWrap color: color) borderWidth: 0.
-            row addMorphLast: spacerMorph copyH: 22 Color: color.        
+            row addMorphLast: spacerMorph copyH: 22.        
             frame: frameMorph copy beShrinkWrap color: color.
             frame frameStyle: frame insetBezelStyle.
             frame borderWidth: 2.
@@ -2029,7 +2032,8 @@ SlotsToOmit: mirror parent prototype.
          'ModuleInfo: Module: browseMorphs InitialContents: FollowSlot'
         
          buildFilteringRow = ( |
-            | spacerMorph copyH: 0 Color: color).
+            | 
+            spacerMorph copyH: 0).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'messagesMorph' -> () From: ( | {

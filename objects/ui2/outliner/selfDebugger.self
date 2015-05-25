@@ -3,6 +3,7 @@
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -342,7 +343,7 @@ globals selfGeneralSlotModel parent buttonDescriptions. _Clone
 
             outerRow addMorph: objectPushButton copyMirror: (act receiverIfFail: [|:e| reflect: 'no receiver: ', e])
                                                      Color: myOutliner color.
-            sp: spacerMorph copyH: 4 Color: myOutliner color.
+            sp: spacerMorph copyH: 4.
 
             (selector copyStr: act selector) keywords
               with: (act asList  copyFilteredBy: [|:s| s isArgument] )
@@ -399,7 +400,7 @@ globals selfGeneralSlotModel parent buttonDescriptions. _Clone
                 sel keywords with: args Do: [ | :kw. :arg. |
                   r addMorphLast: labelMorphForTitle: '  ', kw, ' '.
                   r addMorphLast: labelMorphForTitle: arg name.
-                  r addMorphLast: spacerMorph copyH: 2 Color: myOutliner color.
+                  r addMorphLast: spacerMorph copyH: 2.
                   r addMorphLast: objectPushButton copyMirror: arg value Color: myOutliner color.
               ].
             ].

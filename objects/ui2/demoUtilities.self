@@ -1,8 +1,9 @@
  '$Revision: 30.7 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -145,7 +146,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeMorph].
             b label: ' Morph '.
-            b addMorphLast: (spacerMorph copyV: 4 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 4 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '                 ' &
@@ -167,7 +168,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeRow].
             b label: ' Row '.
-            b addMorphLast: (spacerMorph copyV: 4 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 4 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '                 ' &
@@ -212,14 +213,14 @@ SlotsToOmit: parent prototype.
                         (paint named: 'white') &
                         (paint named: 'black') &
                         (paint named: 'yellow') ) asVector)).
-            b addMorphLast: (spacerMorph copyV: 2 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 2 ).
             r addMorphLast: b beFlexible.
 
             b: ui2Button copyColor: r color Target: shell.
             b script:
                 'event sourceHand attach: demoUtilities makeInsetFrame'.
             b label: ' Inset Frame '.
-            b addMorphLast: (spacerMorph copyV: 3 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 3 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '               ' &
@@ -244,7 +245,7 @@ SlotsToOmit: parent prototype.
             b script:
                 'event sourceHand attach: demoUtilities makeOutsetFrame'.
             b label: ' Outset Frame '.
-            b addMorphLast: (spacerMorph copyV: 3 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 3 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '               ' &
@@ -268,7 +269,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeCircle].
             b label: ' Circle '.
-            b addMorphLast: (spacerMorph copyV: 2 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 2 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '               ' &
@@ -295,7 +296,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeLabel].
             b label: ' Label '.
-            b addMorphLast: (spacerMorph copyV: 2 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 2 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '               ' &
@@ -322,7 +323,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeButton].
             b label: ' Button '.
-            b addMorphLast: (spacerMorph copyV: 2 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 2 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '                 ' &
@@ -347,7 +348,7 @@ SlotsToOmit: parent prototype.
             b: ui2Button copyColor: r color Target: shell.
             b  scriptBlock: [event sourceHand attach: demoUtilities makeSlider].
             b label: ' Slider '.
-            b addMorphLast: (spacerMorph copyV: 2 Color: r color ).
+            b addMorphLast: (spacerMorph copyV: 2 ).
             b addMorphLast: (imageMorph copyImage:
                 (ui2Image copyPixelLines: (
                         '          ' &

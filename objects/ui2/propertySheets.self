@@ -1,8 +1,9 @@
  '$Revision: 30.11 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -84,11 +85,11 @@ SlotsToOmit: parent prototype.
             titleR beFlexible.
             titleR addAllMorphs: (
                 (line copy beRigid setWidth: 15)          &
-                (spacerMorph copyH: 5 Color: color)       &
+                (spacerMorph copyH: 5)                    &
                 (labelMorph copyLabel: title
                     FontSpec: (outlinerPreferences mediumFontSpec copyName: 'verdana' Style: 'italic')
                     Color:    paint named: 'black')       &
-                (spacerMorph copyH: 5 Color: color)       &
+                (spacerMorph copyH: 5)                    &
                 line copy) asVector.
 
             entriesC: columnMorph copy beFlexible color: color.
@@ -98,12 +99,12 @@ SlotsToOmit: parent prototype.
             entriesR: rowMorph copy beFlexible color: color.
             entriesR borderWidth: 0.
             entriesR addAllMorphs:
-                ((spacerMorph copyH: 6 Color: color) & entriesC) asVector.
+                ((spacerMorph copyH: 6) & entriesC) asVector.
 
             addAllMorphs: (
-                (spacerMorph copyV: 5 Color: color) &
-                titleR                              &
-                (spacerMorph copyV: 3 Color: color) &
+                (spacerMorph copyV: 5) &
+                titleR                 &
+                (spacerMorph copyV: 3) &
                 entriesR) asVector.
             self).
         } | ) 
@@ -975,11 +976,11 @@ SlotsToOmit: parent prototype.
             r addAllMorphs: (
                 (spacerMorph copy beFlexible color: color) &
                 b1                                         &
-                (spacerMorph copyH: 4 Color: color)        &
+                (spacerMorph copyH: 4)                     &
                 b2                                         &
-                (spacerMorph copyH: 4 Color: color)        &
+                (spacerMorph copyH: 4)                     &
                 b3                                         &
-                (spacerMorph copyH: 4 Color: color)        &
+                (spacerMorph copyH: 4)                     &
                 b4) asVector.
 
             t: labelMorph copyLabel: ('Properties for ', target morphTypeName prependAOrAn)
@@ -990,9 +991,9 @@ SlotsToOmit: parent prototype.
             c borderWidth: 4.
             c addAllMorphs:
                 (vector copyAddLast: t),
-                (vector copyAddLast: (spacerMorph copyV: 10 Color: color)),
+                (vector copyAddLast: (spacerMorph copyV: 10)),
                 subsheets,
-                (vector copyAddLast: (spacerMorph copyV: 10 Color: color)),
+                (vector copyAddLast: (spacerMorph copyV: 10)),
                 (vector copyAddLast: r).
 
             addMorph: c.

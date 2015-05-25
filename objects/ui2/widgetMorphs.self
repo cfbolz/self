@@ -1,8 +1,9 @@
  'Sun-$Revision: 30.9 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -634,7 +635,7 @@ SlotsToOmit: comment directory fileInTimeString myComment postFileIn revision su
     '0011100' ) asVector
  Colors: (
     (paint named: 'white') &
-    (paint named: 'black')) asVector] value) From: ( |
+    (paint named: 'transparent')) asVector] value) From: ( |
              {} = 'ModuleInfo: Creator: traits checkCircleMorph sevenPixelCircleImage.
 \x7fIsComplete: '.
             | ) .
@@ -726,7 +727,7 @@ SlotsToOmit: comment directory fileInTimeString myComment postFileIn revision su
             row addMorphLast: (col copy addAllMorphs:
                 ((lbl copy label: 'B') & (f copy addMorph: blueSlider)) asList).
 
-            row addMorphLast: spacerMorph copyH: 15 Color: color.
+            row addMorphLast: spacerMorph copyH: 15.
 
             hueSlider:        (s copy selector: 'hue:').
             hueSlider maxValue: 360.0.      "hue is in the range 0..360"
@@ -818,10 +819,10 @@ SlotsToOmit: comment directory fileInTimeString myComment postFileIn revision su
             buttonRow: rowMorph copy beShrinkWrap color: color.
             buttonRow borderWidth: 0.
             buttonRow addMorphLast: getButton.
-            buttonRow addMorphLast: spacerMorph copyH: 12 Color: color.
+            buttonRow addMorphLast: spacerMorph copyH: 12.
             colorPatch: morph copy setWidth: 50 Height: 30.
             buttonRow addMorphLast: (f copy addMorph: colorPatch).
-            buttonRow addMorphLast: spacerMorph copyH: 12 Color: color.
+            buttonRow addMorphLast: spacerMorph copyH: 12.
             buttonRow addMorphLast: setButton.
 
             col: columnMorph copy beFlexible color: color.
@@ -830,10 +831,10 @@ SlotsToOmit: comment directory fileInTimeString myComment postFileIn revision su
                 FontSpec: (globals fontSpec copyName: 'helvetica' Size: 18 Style: 'bold' )
                 Color:    (paint named: 'black').
 
-            col addMorphLast: spacerMorph copyV: 10 Color: color.
+            col addMorphLast: spacerMorph copyV: 10.
             col addMorphLast: buttonRow.
 
-            col addMorphLast: spacerMorph copyV: 10 Color: color.
+            col addMorphLast: spacerMorph copyV: 10.
             col addMorphLast: buildSliderRowColor: color.
             addMorph: col.
 

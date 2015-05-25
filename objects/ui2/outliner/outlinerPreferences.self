@@ -3,6 +3,7 @@
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -618,7 +619,7 @@ good for introducing language semantics, say.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'preferences' -> () From: ( | {
-         'Category: graphical interface\x7fCategory: ui2\x7fModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
+         'Category: graphical interface\x7fModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
         
          outliner = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'preferences' -> 'outliner' -> () From: ( |
              {} = 'ModuleInfo: Creator: globals preferences outliner.
@@ -1067,13 +1068,6 @@ good for introducing language semantics, say.
             paint copyRed: 0.6 Green: 0.8 Blue: 0.6).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'preferences' -> 'outliner' -> 'colorSchemes' -> 'default46' -> () From: ( | {
-         'Category: tags\x7fModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
-        
-         unusualTag = ( |
-            | unusual).
-        } | ) 
-
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'preferences' -> 'outliner' -> 'colorSchemes' -> () From: ( | {
          'ModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
         
@@ -1280,7 +1274,8 @@ good for introducing language semantics, say.
          'ModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
         
          fontSpec = ( |
-            | resend.fontSpec copyName: 'verdana' Style: '').
+            | 
+            resend.fontSpec copyName: 'verdana' Style: '').
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'slotOutlinerPreferences' -> 'privateSlotStyle' -> () From: ( | {
@@ -1302,7 +1297,8 @@ good for introducing language semantics, say.
          'ModuleInfo: Module: outlinerPreferences InitialContents: FollowSlot'
         
          fontSpec = ( |
-            | resend.fontSpec copyName: 'verdana' Style: 'bold').
+            | 
+            resend.fontSpec copyName: 'verdana' Style: 'bold').
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'slotOutlinerPreferences' -> 'publicSlotStyle' -> () From: ( | {

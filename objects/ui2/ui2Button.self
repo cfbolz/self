@@ -1,8 +1,9 @@
  'Sun-$Revision: 30.12 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -228,10 +229,11 @@ SlotsToOmit: baseMinHeight baseMinWidth parent prototype.
             m: morphs.
             removeAllMorphs.
             addMorph:
-              (rowMorph copy 
+              ((rowMorph copy 
                 beFlexibleVertically
                 beShrinkWrapHorizontally
                 borderWidth: 0)
+                color: paint named: 'transparent')
                 addAllMorphs: m).
         } | ) 
 

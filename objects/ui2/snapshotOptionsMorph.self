@@ -1,8 +1,9 @@
  '$Revision: 30.7 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -244,7 +245,7 @@ SlotsToOmit: prototype.
                                                         Size: newLabel fontSpec size + 2
                                                         Style: 'bold' ) )
 
-              & ( spacerMorph copyV: 10 Color: color )
+              & ( spacerMorph copyV: 10 )
 
               & ( buildRowLabelled: 'File:' 
                     Widget: (newEditorIn: [|:x| fileNameEditor: x] )

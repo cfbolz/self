@@ -1,8 +1,9 @@
  '$Revision: 30.14 $'
  '
-Copyright 1992-2012 AUTHORS.
-See the LICENSE file for license information.
+Copyright 1992-2014 AUTHORS.
+See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -152,7 +153,7 @@ SlotsToOmit: parent prototype rawColor.
         
          addButtonToColumn: aButton = ( |
             | 
-            widgetColumn addMorphLast: spacerMorph copyV: 10 Color: color.
+            widgetColumn addMorphLast: spacerMorph copyV: 10.
             widgetColumn addMorphLast: aButton.
             self).
         } | ) 
@@ -162,7 +163,7 @@ SlotsToOmit: parent prototype rawColor.
         
          addButtonToRow: aButton = ( |
             | 
-            buttonRow addMorphLast: spacerMorph copyH: 10 Color: color.
+            buttonRow addMorphLast: spacerMorph copyH: 10.
             buttonRow addMorphLast: aButton.
             self).
         } | ) 
@@ -331,7 +332,7 @@ for user reponses are added via buttonLabel:Result:.
                                  FontSpec: defaultFontSpec
                                     Color: defaultFontColor).
             ].
-            mphs add: spacerMorph copyV: 10 Color: color.
+            mphs add: spacerMorph copyV: 10.
             new buttonExpressions: buttonExpressions copyRemoveAll.
             new buttonRow:    (rowMorph    copy beFlexible borderWidth: 0).
             new widgetColumn: (columnMorph copy beFlexible borderWidth: 0).
@@ -339,7 +340,7 @@ for user reponses are added via buttonLabel:Result:.
             new widgetColumn baseMinHeight: 0.
             new buttonRow addMorph: spacerMorph copy beFlexible.
             mphs add: new widgetColumn.
-            mphs add: spacerMorph copyV: 5 Color: color.
+            mphs add: spacerMorph copyV: 5.
             mphs add: new buttonRow.
             c: columnMorph copy beFlexible borderWidth: 5.
             c addAllMorphs: mphs.
@@ -356,7 +357,6 @@ for user reponses are added via buttonLabel:Result:.
              new.
             | 
             new: copyRemoveAllMorphs beShrinkWrap.
-            new colorAll: paint copyRed: 0 Green: 0 Blue: 0 Alpha: 0.7.
             new doneSema: (doneSema copyCount: 0 Capacity: 1).
             mphs: list copyRemoveAll.
             (queryText asTextLines) do: [| :line |
@@ -365,7 +365,7 @@ for user reponses are added via buttonLabel:Result:.
                                  FontSpec: defaultFontSpec
                                     Color: defaultFontColor).
             ].
-            mphs add: spacerMorph copyV: 10 Color: color.
+            mphs add: spacerMorph copyV: 10.
             new buttonExpressions: buttonExpressions copyRemoveAll.
             new buttonRow:    (rowMorph    copy beFlexible borderWidth: 0).
             new widgetColumn: (columnMorph copy beFlexible borderWidth: 0).
@@ -373,7 +373,7 @@ for user reponses are added via buttonLabel:Result:.
             new widgetColumn baseMinHeight: 0.
             new buttonRow addMorph: spacerMorph copy beFlexible.
             mphs add: new widgetColumn.
-            mphs add: spacerMorph copyV: 5 Color: color.
+            mphs add: spacerMorph copyV: 5.
             mphs add: new buttonRow.
             c: columnMorph copy beFlexible borderWidth: 20.
             c addAllMorphs: mphs.

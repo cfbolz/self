@@ -3,6 +3,7 @@
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -543,12 +544,12 @@ SlotsToOmit: parent prototype.
                 case if: [ hLayout = 0 ] Then:      rigidHImage
                      If: [ hLayout = 1 ] Then:   flexibleHImage
                      If: [ hLayout = 2 ] Then: shrinkWrapHImage).
-            r addMorphLast: (spacerMorph copyH: 5 Color: color).
+            r addMorphLast: (spacerMorph copyH: 5).
             r addMorphLast: imageMorph copyImage: (
                 case if: [ vLayout = 0 ] Then:      rigidVImage
                      If: [ vLayout = 1 ] Then:   flexibleVImage
                      If: [ vLayout = 2 ] Then: shrinkWrapVImage).
-            r addMorphLast: (spacerMorph copyH: 5 Color: color).
+            r addMorphLast: (spacerMorph copyH: 5).
             b: ui2Button copyColor: color Target: realMorph.
             b borderWidth: 1.
             b scriptBlock: [target popUpResizeMenu: event].
@@ -569,24 +570,24 @@ SlotsToOmit: parent prototype.
 
             b: ui2Button copyColor: color Target: realMorph.
             b borderWidth: 1.
-            b addMorphLast: (spacerMorph copyV: 4 Color: color).
+            b addMorphLast: (spacerMorph copyV: 4).
             b addMorphLast: imageMorph copyImage: (
                 case if: [ hLayout = 0 ] Then:      rigidHImage
                      If: [ hLayout = 1 ] Then:   flexibleHImage
                      If: [ hLayout = 2 ] Then: shrinkWrapHImage).
-            b addMorphLast: (spacerMorph copyV: 4 Color: color).
+            b addMorphLast: (spacerMorph copyV: 4).
             hResizeButton: b.
             addMorphLast:  b.
 
             b: ui2Button copyColor: color Target: realMorph.
             b borderWidth: 1.
             r: (rowMorph copy color: color) borderWidth: 0.
-            r addMorphLast: (spacerMorph copyH: 5 Color: color).
+            r addMorphLast: (spacerMorph copyH: 5).
             r addMorphLast: imageMorph copyImage: (
                 case if: [ vLayout = 0 ] Then:      rigidVImage
                      If: [ vLayout = 1 ] Then:   flexibleVImage
                      If: [ vLayout = 2 ] Then: shrinkWrapVImage).
-            r addMorphLast: (spacerMorph copyH: 5 Color: color).
+            r addMorphLast: (spacerMorph copyH: 5).
             b addMorph: r.
             vResizeButton: b.
             addMorphLast:  b).
@@ -627,16 +628,16 @@ SlotsToOmit: parent prototype.
             new color: paint named: 'lightGray'.
 
             new addColorPatch.
-            new addMorphLast: spacerMorph copyH: 4 Color: new color.
+            new addMorphLast: spacerMorph copyH: 4.
 
             "xxxxx
             new addSubmorphMenuButton.
             new addEyesButton.
-            new addMorphLast: spacerMorph copyH: 8 Color: new color.
+            new addMorphLast: spacerMorph copyH: 8.
             xxxxx"
 
             new addMorphNameFramed: false.
-            new addMorphLast: spacerMorph copy beFlexible color: new color.
+            new addMorphLast: spacerMorph copy beFlexible.
 
             new addSeparateResizeButtons.
             new).
@@ -883,28 +884,28 @@ SlotsToOmit: parent prototype.
               (imageMorph copyImage:   flexibleVImage) ) asList.
 
             m addMorphLast: (labelMorph copy label: ' Horizontal Resizing: ').
-            m addMorphLast: spacerMorph copyV: 2 Color: color.
+            m addMorphLast: spacerMorph copyV: 2.
             6 do: [| :i |
               (i = 3) ifTrue: [
                 "Add divider and title for vertical resizing items"
-                m addMorphLast: spacerMorph copyV: 3 Color: color.
+                m addMorphLast: spacerMorph copyV: 3.
                 m addDivider.
-                m addMorphLast: spacerMorph copyV: 5 Color: color.
+                m addMorphLast: spacerMorph copyV: 5.
                 m addMorphLast: (labelMorph copy label: ' Vertical Resizing: ').
-                m addMorphLast: spacerMorph copyV: 2 Color: color.
+                m addMorphLast: spacerMorph copyV: 2.
               ].
               b: ui2Button copy target: realMorph. 
               b scriptBlock: (scripts at: i).
               r: rowMorph copy.
               r borderWidth: 0.
-              r addMorphLast: (spacerMorph copyH: 15 Color: color).
+              r addMorphLast: (spacerMorph copyH: 15).
               r addMorphLast: (labelMorph copy label:  labels at: i)  fontSpec: m defaultFontSpec.
               r addMorphLast: (morph copy setHeight: 1) beFlexibleHorizontally .
               r addMorphLast: (images at: i) copy.
               b addMorph: r.
               m addButton: b.
             ].
-            m addMorphLast: spacerMorph copyV: 3 Color: color.
+            m addMorphLast: spacerMorph copyV: 3.
             m colorAll: (paint copyRed: 0.78 Green: 0.87 Blue: 0.87).
             defaultButtonHolder: m initializeDefaultButtonHolder: defaultButtonHolder.
             m popUp: evt).

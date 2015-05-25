@@ -3,6 +3,7 @@
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -1871,7 +1872,7 @@ SlotsToOmit: parent prototype.
             new column beRigidHorizontally.
             new column setWidth: 9.
             new column borderWidth: 0.
-            new spacer:  spacerMorph copyH: 5 Color: style color.
+            new spacer:  spacerMorph copyH: 5.
             new isActive: active.
             new).
         } | ) 
@@ -2954,8 +2955,8 @@ SlotsToOmit: parent prototype.
             c: columnMorph copy color: color.
             c borderWidth: 4.
             c addAllMorphs: (
-                r                                   &
-                (spacerMorph copyV: 4 Color: color) &
+                r                      &
+                (spacerMorph copyV: 4) &
                 editor
             ) asVector.
 

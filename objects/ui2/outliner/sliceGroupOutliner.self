@@ -1,8 +1,9 @@
  '$Revision: 30.14 $'
  '
-Copyright 1992-2011 AUTHORS.
+Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
+["preFileIn" self] value
 
 
  '-- Module body'
@@ -151,7 +152,7 @@ Profile slices do not. -- 11/04 dmu\x7fModuleInfo: Module: sliceGroupOutliner In
                  Then: [header addMorphLast: contentsOutliners first]
 
                  Else: [|cm|
-                         cm: columnMorph copy.
+                         cm: columnMorph copy color: paint named: 'transparent'.
                          cm borderWidth: 0.
                          cm addAllMorphs: contentsOutliners.
                          header addMorphLast: cm.
@@ -395,12 +396,20 @@ does no remapping.\x7fModuleInfo: Module: sliceGroupOutliner InitialContents: Fo
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'sliceGroupOutliner' -> 'parent' -> () From: ( | {
+         'Category: updating\x7fModuleInfo: Module: sliceGroupOutliner InitialContents: FollowSlot'
+        
+         recolor = ( |
+            | 
+            resend.recolor. morphsDo: [|:c| c recolor]. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'sliceGroupOutliner' -> 'parent' -> () From: ( | {
          'Category: updating\x7fModuleInfo: Module: sliceGroupOutliner InitialContents: FollowSlot\x7fVisibility: private'
         
          removeExpander = ( |
             | 
             resend.removeExpander.
-            header addMorphFirst: rigidSpacer copyH: expander expandedSize x Color: color.
+            header addMorphFirst: rigidSpacer copyH: expander expandedSize x.
             self).
         } | ) 
 
@@ -467,7 +476,6 @@ does no remapping.\x7fModuleInfo: Module: sliceGroupOutliner InitialContents: Fo
               ms addLast: m.
             ].
             s beRigidHorizontally beFlexibleVertically.
-            s color: color.
             s setWidth: to - titleOffset.
             safelyDo: [header removeAllMorphs addAllMorphs: ms].
             self).
